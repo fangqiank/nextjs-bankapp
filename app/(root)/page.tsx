@@ -9,7 +9,7 @@ type Props = {};
 const Home = async (props: Props) => {
 	const loggedIn = await getLoggedInUser()
 
-	console.log(loggedIn);
+	// console.log(loggedIn);
 
 	return (
 		<section className="home">
