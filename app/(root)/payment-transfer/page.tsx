@@ -1,9 +1,31 @@
-import React from "react";
+import { HeaderBox } from "@/components/shared/HeaderBox";
+import { PaymentTransferForm } from "@/components/shared/PaymentTransferForm";
+import { getAccounts } from "@/lib/actions/bank.action";
+import { getLoggedInUser } from "@/lib/actions/user.action";
 
-type Props = {};
+const TransferFundPage = async () => {
+	const loggedIn = await getLoggedInUser()
+	const accounts = await getAccounts({
+		userId: loggedIn?.$id
+	})
 
-const TransferFundPage = (props: Props) => {
-	return <div>Transfer Fund</div>;
+	if(!accounts)
+		return
+
+	return (
+		<section className="payment-transfer">
+			<HeaderBox 
+				title="Payment Transfer"
+        subtext="Please provide any specific details or notes related to the payment transfer"
+			/>
+
+			<section className="pt-5 size-full">
+				<PaymentTransferForm
+					accounts={accounts?.data} 
+				/>
+			</section>
+		</section>
+	)
 };
 
 export default TransferFundPage;
