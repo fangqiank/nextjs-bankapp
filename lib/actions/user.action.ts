@@ -202,7 +202,7 @@ export const exchangePublicToken = async ({
       processorToken,
       bankName: accountData.name,
     });
-    console.log(fundingSourceUrl);
+    fundingSourceUrl;
 
     if (!fundingSourceUrl)
       throw Error("Failed with creating a funding source URL");

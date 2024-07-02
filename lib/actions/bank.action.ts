@@ -92,7 +92,7 @@ export const getAccount = async ({appwriteItemId}: getAccountProps) => {
         };
       }
     );
-    console.log(transferTransactions);
+    // console.log(transferTransactions);
 
     const institution = await getInstitution({
       institutionId: accountResponse.data.item.institution_id!,

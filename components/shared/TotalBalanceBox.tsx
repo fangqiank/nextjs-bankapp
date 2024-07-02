@@ -1,10 +1,7 @@
 'use client'
 
-import React from "react";
 import { DoughnutChart } from "./DoughnutChart";
-import { formatAmount } from "@/lib/utils";
 import { AnimatedCounter } from "./AnimatedCounter";
-
 
 export const TotalBalanceBox = ({accounts=[], totalBanks, totalCurrentBalance}: TotalBalanceBoxProps) => {
 	return (
