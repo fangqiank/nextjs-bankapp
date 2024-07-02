@@ -45,10 +45,7 @@ export const Category = ({category}: CategoryProps) => {
 						'h-2 w-full',
 						progressBg
 					)}
-					indicatorClassName={cn(
-						"h-2 w-full", 
-						indicator
-					)}
+					
 				/>
 			</div>
 		</div>
